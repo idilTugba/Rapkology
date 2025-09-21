@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
 
   return (
     <main className="mt-20 grid grid-cols-10 gap-10">
-      <div className="col-span-10 mx-5 mt-10 md:col-span-6 md:mx-20">
+      <div className="col-span-10 mx-5 mt-10 md:mx-20 lg:col-span-6">
         <Breadcrumbs className="text-rkblack-500 mb-4" currentLabel={post.attributes.title} />
         <h1 className="mb-4 text-3xl font-extrabold leading-tight">{post.attributes.title}</h1>
         <div className="relative mb-6 aspect-[16/9] w-full overflow-hidden rounded-lg">
@@ -115,7 +115,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           </div>
         </div>
       </div>
-      <div className="col-span-10 mx-5 md:col-span-4">
+      <div className="col-span-10 mx-5 md:mx-20 lg:col-span-4 lg:mx-0">
         <Footer classname="!mt-10" />
       </div>
     </main>
