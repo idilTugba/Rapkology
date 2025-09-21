@@ -33,15 +33,15 @@ export default function BlogSlider({ rows }: { rows: RapPostCollection }) {
               />
             </div>
             <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 px-7 py-6">
-              <h2 className="text-3xl font-extrabold leading-tight text-white drop-shadow">
+              <h2 className="line-clamp-2 text-xl font-extrabold leading-tight text-white drop-shadow sm:text-3xl">
                 {post.attributes.title.toUpperCase()}
               </h2>
-              <span className="size-14 place-items-center">
+              <span className="mr-2 place-items-center text-4xl">
                 <span className="icon icon--play"></span>
               </span>
             </div>
           </Link>
-          <p className="text-rkblack-500 mb-3 mt-4 line-clamp-3 pl-10 pr-28 text-xl font-extrabold leading-tight">
+          <p className="text-rkblack-500 mb-3 mt-4 line-clamp-3 pl-0 pr-28 text-xl font-extrabold leading-tight lg:pl-10">
             {post.attributes.content.toUpperCase()}
           </p>
         </SwiperSlide>

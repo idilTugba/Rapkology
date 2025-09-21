@@ -43,7 +43,7 @@ const slides: Slide[] = [
 export default function MainSlider() {
   return (
     <section className="relative min-h-screen w-full md:h-screen">
-      <div className="hidden h-full min-h-screen w-full lg:block">
+      <div className="mainSlider hidden h-full min-h-screen w-full lg:block">
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}
           autoplay={{ delay: 9500, disableOnInteraction: false }}

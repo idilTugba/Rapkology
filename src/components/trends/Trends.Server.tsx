@@ -18,9 +18,15 @@ export default function TrendsServer({
 
   return (
     <div className={className}>
-      <div className="ml-20 mt-0 grid gap-10 sm:ml-0 sm:mt-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-0 grid gap-10 sm:mt-6 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((post, i) => (
-          <PostCardTitle key={post._id} post={post} i={i} cardType="onlyTitle" />
+          <PostCardTitle
+            key={post._id}
+            post={post}
+            i={i}
+            cardType="imageAndTitle"
+            classname="hiddenNumber"
+          />
         ))}
       </div>
     </div>

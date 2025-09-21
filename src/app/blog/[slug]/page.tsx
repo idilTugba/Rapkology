@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
 
   return (
     <main className="mt-20 grid grid-cols-10 gap-10">
-      <div className="col-span-6 mx-20 mt-10">
+      <div className="col-span-10 mx-5 mt-10 md:col-span-6 md:mx-20">
         <Breadcrumbs className="text-rkblack-500 mb-4" currentLabel={post.attributes.title} />
         <h1 className="mb-4 text-3xl font-extrabold leading-tight">{post.attributes.title}</h1>
         <div className="relative mb-6 aspect-[16/9] w-full overflow-hidden rounded-lg">
@@ -104,7 +104,10 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           ))}
         </div>
         <div className="mt-10">
-          <Title classname="!mb-4">TRENDLER</Title>
+          <Title classname="!mb-4">
+            TRENDLER{" "}
+            <span className="icon icon--lighting text-rkyellow-500 left-4 top-1 text-5xl"></span>
+          </Title>
           <div className="ml-20 grid gap-10 sm:ml-0 lg:grid-cols-2">
             {data.slice(0, 4).map((post, i) => (
               <PostCardTitle key={post._id} post={post} i={i} cardType="onlyTitle" />
@@ -112,7 +115,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           </div>
         </div>
       </div>
-      <div className="col-span-4">
+      <div className="col-span-10 mx-5 md:col-span-4">
         <Footer classname="!mt-10" />
       </div>
     </main>

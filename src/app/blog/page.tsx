@@ -74,12 +74,12 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
         </div>
       </div>
 
-      <div className="relative top-[-100px] z-50 h-auto min-h-[100px] w-full bg-[url(/vector-bg.png)] bg-contain after:absolute after:left-0 after:top-[100px] after:h-full after:w-full after:bg-[#121212]"></div>
+      <div className="relative top-[-100px] z-50 h-auto min-h-[100px] w-full bg-[url(/vector-bg.png)] bg-cover after:absolute after:left-0 after:top-[100px] after:h-full after:w-full after:bg-[#121212] md:bg-contain"></div>
 
       <section className="text-white">
-        <Title classname="pl-20">KEŞFET</Title>
+        <Title classname="pl-0 lg:pl-20">KEŞFET</Title>
 
-        <div className="m-10">
+        <div className="mx-0 my-10 lg:m-10">
           <TagFiltersServer tags={TAGS} active={activeTag} />
         </div>
 
@@ -92,7 +92,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
         )}
       </section>
 
-      <Footer classname="flex justify-between mx-20" />
+      <Footer classname="block mx-5 lg:flex justify-between lg:mx-20" />
     </main>
   );
 }

@@ -11,7 +11,7 @@ export default function TagFiltersServer({
   className?: string;
 }) {
   return (
-    <div className={clsx("flex flex-wrap gap-2", className)}>
+    <div className={clsx("flex flex-row flex-col gap-2 overflow-x-scroll", className)}>
       {tags.map((tag) => (
         <Link
           key={tag}

@@ -55,7 +55,9 @@ export default function Section5({ data, initialLimit = 5 }: Props) {
       {/* ilk div'in yüksekliği scrol yaptıkça değiştiği için burada footer row-col sayısına göre işleme giremiyor. 
       bu sebeple iki kere footer çağrıldı */}
       <div className="order-2 lg:order-1 lg:col-span-4 lg:row-span-2">
-        <Title>KEŞFET</Title>
+        <Title>
+          KEŞFET<span className="icon icon--compass text-rkyellow-500 left-4 top-1 text-5xl"></span>
+        </Title>
         {rows.slice(0, visibleCount).map((post, i) => (
           <PostCard
             key={post._id}
