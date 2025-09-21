@@ -11,14 +11,16 @@ import PostCardTitle from "@/components/postCard/PostCardTitle";
 
 type Params = { slug: string };
 
+export const revalidate = 300;
+
 // export async function generateStaticParams() {
 //   const posts = await fetchPosts();
 //   return posts.map((p) => ({ slug: p.attributes.slug }));
 // }
 
-const data: RapPostCollection = await fetchPosts();
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const post = await fetchPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await fetchPostBySlug(slug);
   if (!post) return { title: "Bulunamadı" };
 
   const { metaTitle, metaDescription, canonicalURL } = post.attributes.seo ?? {};
@@ -35,9 +37,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
 }
 
-export default async function BlogPostPage({ params }: { params: Params }) {
-  const post = await fetchPostBySlug(params.slug);
-  if (!post) notFound();
+export default async function BlogPostPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const post = await fetchPostBySlug(slug);
+  if (!post) return notFound();
+
+  const data: RapPostCollection = await fetchPosts({ revalidate: 300 });
 
   return (
     <main className="mt-20 grid grid-cols-10 gap-10">
