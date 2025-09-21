@@ -1,6 +1,5 @@
 # 🎤 Rapkology
 
-Türkçe rap sahnesi ve dünya rap trendlerini takip edebileceğiniz modern bir blog uygulaması.  
 Next.js 15, TailwindCSS ve Vercel üzerinde geliştirilmiştir.
 
 🔗 **Live Demo HOMEPAGE:** [rapkology.vercel.app](https://vercel.com/idil-tugbas-projects/rapkology)  
