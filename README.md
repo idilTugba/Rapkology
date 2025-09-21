@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎤 Rapkology
 
-## Getting Started
+Türkçe rap sahnesi ve dünya rap trendlerini takip edebileceğiniz modern bir blog uygulaması.  
+Next.js 15, TailwindCSS ve Vercel üzerinde geliştirilmiştir.
 
-First, run the development server:
+🔗 **Live Demo HOMEPAGE:** [rapkology.vercel.app](https://vercel.com/idil-tugbas-projects/rapkology)  
+🔗 **BLOG:** [rapkology.vercel.app](https://vercel.com/idil-tugbas-projects/rapkology/blog)
+
+---
+
+## 🚀 Özellikler
+
+- ⚡ **Next.js 15 App Router** ile modern React mimarisi
+- 🎨 **TailwindCSS** ile responsive ve hızlı tasarım
+- 📱 **Swiper Slider** ile mobil uyumlu kaydırmalı bileşenler
+- 🔎 **Dynamic Routes** → `/blog/[slug]` yapısı
+- 📝 **SEO Metadata** → `generateMetadata` ile dinamik başlık & açıklamalar
+- ⏱ **ISR / Revalidate** ile içerik önbellekleme ve otomatik yenileme
+- ☁️ **Vercel Deploy** entegrasyonu
+
+---
+
+## 📂 Sayfalar
+
+- `/` → Ana sayfa, trendler, slider ve öne çıkan içerikler
+- `/blog` → Tüm blog yazılarının listelendiği sayfa
+- `/blog/[slug]` → Dinamik blog detay sayfası
+
+---
+
+## 📂 Proje Yapısı
 
 ```bash
+src/
+ ├─ app/
+ │   ├─ page.tsx             # Ana sayfa
+ │   ├─ blog/page.tsx        # Blog listesi
+ │   ├─ blog/[slug]/page.tsx # Blog detay sayfası
+ │   └─ layout.tsx           # Root layout
+ │
+ ├─ components/              # UI bileşenleri (Header, Footer, Card vs.)
+ ├─ lib/                     # API çağrıları, tipler, util fonksiyonlar
+ ├─ hooks/                   # Custom React hook'lar
+ └─ styles/                  # Global stiller
+
+
+# 1. Repo'yu klonla
+git clone https://github.com/idilTugba/rapkology.git
+cd rapkology
+
+# 2. Bağımlılıkları yükle
+npm install
+
+# 3. Geliştirme sunucusunu başlat
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 4. Tarayıcıda aç
+http://localhost:3000
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
