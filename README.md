@@ -1,23 +1,30 @@
 # 🎤 Rapkology
 
-Next.js 15, TailwindCSS ve Vercel üzerinde geliştirilmiştir.
-
 🔗 **Live Demo HOMEPAGE:** [rapkology.vercel.app](https://vercel.com/idil-tugbas-projects/rapkology)  
 🔗 **BLOG:** [rapkology.vercel.app](https://vercel.com/idil-tugbas-projects/rapkology/blog)
 
 ---
 
+## 🚀 Hydration ve Mimari Tercihleri
+
+Ana sayfa ve Blog, Blog Detail sayfalarında ortak yapılar var. Blog ve Detail sayfasını SEO ve performans sebebiyle server component olarak geliştirdiğimde ana sayfada ortak kullandığım parçalardan dolayı ana sayfayı da Server side yapabilirdim ancak yine performans sebebiyle ana sayfayı client side bırakmayı tercih ettim. Ana sayfayada slider, filtreleme ve “daha fazla göster” gibi interaktif özellikler çok fazla. Bu yapılar state yönetimiyle daha esnek şekilde kontrol edilebiliyor.
+
+⚡ Ana sayfa (Client ağırlıklı): Slider (Swiper) ve “daha fazla göster” gibi interaktif bileşenler yoğun olduğu için client component olarak kurgulandı. Server sadece başlangıç HTML’i üretir; tarayıcıda React ile hydration tamamlanınca slider kontrolleri ve buton etkileşimleri aktifleşir.
+
+⚡ Blog ve Blog Detail (Server ağırlıklı): SEO ve performans öncelikli sayfalar olduğu için server component olarak geliştirildi. İçerikler doğrudan SSR/ISR ile render edilerek hızlı ve arama motoru dostu HTML üretildi.
+
+⚡ Client adaları: Breadcrumbs, ShowAllLink gibi küçük interaktif bölgeler server page’lerin içine “ada” olarak gömüldü. Hydration sonrasında yalnızca bu alanlar JavaScript ile aktive oldu.
+
 ## 🚀 Özellikler
 
-- ⚡ **Next.js 15 App Router** ile modern React mimarisi
-- 🎨 **TailwindCSS** ile responsive ve hızlı tasarım
-- 📱 **Swiper Slider** ile mobil uyumlu kaydırmalı bileşenler
-- 🔎 **Dynamic Routes** → `/blog/[slug]` yapısı
-- 📝 **SEO Metadata** → `generateMetadata` ile dinamik başlık & açıklamalar
-- ⏱ **ISR / Revalidate** ile içerik önbellekleme ve otomatik yenileme
-- ☁️ **Vercel Deploy** entegrasyonu
-
-Ana sayfa ve Blog, Blog Detail sayfalarında ortak yapılar var. Blog ve Detail sayfasını SEO ve performans sebebiyle server component olarak geliştirdiğimde ana sayfada ortak kullandığım parçalardan dolayı ana sayfayı da Server side yapabilirdim ancak yine performans sebebiyle ana sayfayı client side bırakmayı tercih ettim. Ana sayfayada slider, filtreleme ve “daha fazla göster” gibi interaktif özellikler çok fazla. Bu yapılar state yönetimiyle daha esnek şekilde kontrol edilebiliyor. Blog ve Blog Detail sayfaları ise doğrudan SSR/ISR ile render edilip hızlı ve arama motorlarına uygun.
+- ⚡ **Next.js 15 App Router**
+- 🎨 **TailwindCSS**
+- 📱 **Swiper Slider**
+- 🔎 **Dynamic Routes** → `/blog/[slug]`
+- 📝 **SEO Metadata** → `generateMetadata`
+- ⏱ **ISR / Revalidate**
+- ⚡ **Prettier**
+- ☁️ **Vercel Deploy**
 
 ---
 
