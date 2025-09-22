@@ -17,6 +17,8 @@ Next.js 15, TailwindCSS ve Vercel üzerinde geliştirilmiştir.
 - ⏱ **ISR / Revalidate** ile içerik önbellekleme ve otomatik yenileme
 - ☁️ **Vercel Deploy** entegrasyonu
 
+Ana sayfa ve Blog, Blog Detail sayfalarında ortak yapılar var. Blog ve Detail sayfasını SEO ve performans sebebiyle server component olarak geliştirdiğimde ana sayfada ortak kullandığım parçalardan dolayı ana sayfayı da Server side yapabilirdim ancak yine performans sebebiyle ana sayfayı client side bırakmayı tercih ettim. Ana sayfayada slider, filtreleme ve “daha fazla göster” gibi interaktif özellikler çok fazla. Bu yapılar state yönetimiyle daha esnek şekilde kontrol edilebiliyor. Blog ve Blog Detail sayfaları ise doğrudan SSR/ISR ile render edilip hızlı ve arama motorlarına uygun.
+
 ---
 
 ## 📂 Sayfalar
